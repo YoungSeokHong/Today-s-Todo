@@ -5,22 +5,79 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class SecurityActivity extends AppCompatActivity {
-    ImageView iv_back_login;
+    private int[] numBtnIDs = {R.id.btn_one, R.id.btn_two, R.id.btn_three, R.id.btn_four};
+    private String num;
+
+    private ImageView iv_back_login, iv_del;
+    private Button[] numBtns = new Button[numBtnIDs.length];
+    private EditText et_pw_simple;
+
+    private OnclickListener onclickListener;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_security);
+        onclickListener = new OnclickListener();
 
         this.iv_back_login = (ImageView)findViewById(R.id.iv_back_login);
+        this.iv_del = (ImageView)findViewById(R.id.iv_del);
+        this.et_pw_simple = (EditText)findViewById(R.id.et_pw_simple);
+        for(int i=0; i<numBtnIDs.length; i++) numBtns[i] = findViewById(numBtnIDs[i]);
 
-        iv_back_login.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(SecurityActivity.this, LoginActivity.class);
-                startActivity(intent);
+        this.iv_back_login.setOnClickListener(this.onclickListener);
+        this.et_pw_simple.setOnClickListener(this.onclickListener);
+        this.iv_del.setOnClickListener(this.onclickListener);
+        for(Button button : numBtns) button.setOnClickListener(this.onclickListener);
+    }
+
+    private class OnclickListener implements View.OnClickListener{
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.iv_back_login:
+                    finish();
+                    break;
+                case R.id.iv_del:
+                    if(num == null || num.equals("")) break;
+                    num = deleteNum(Integer.parseInt(num));
+                    et_pw_simple.setText(num);
+                    break;
+                default:
+                    num = et_pw_simple.getText().toString() + inputNum(v.getId());
+                    et_pw_simple.setText(checkNum(num, v.getId()));
+                    break;
             }
-        });
+        }
+    }
+
+    private String deleteNum(int num){
+        if(num != 0) num /= 10;
+        if(num == 0) return "";
+        else return String.valueOf(num);
+    }
+
+    private int inputNum(int id){
+        for(int i=0; i<numBtnIDs.length; i++) if(id == numBtnIDs[i]) return i+1;
+        return 0;
+    }
+
+    private String checkNum(String num, int id){
+        if(num.length() >= 4){
+            if(num.equals("1234")){
+                Toast.makeText(getApplicationContext(), "접속에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SecurityActivity.this, MainActivity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(getApplicationContext(), "비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show();
+            }
+            return "";
+        }else{
+            return et_pw_simple.getText().toString() + inputNum(id);
+        }
     }
 }

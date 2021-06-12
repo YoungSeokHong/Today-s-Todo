@@ -35,8 +35,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(login()){
                     Toast.makeText(getApplicationContext(), "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, SecurityActivity.class);
                     intent.putExtra("id", id);
+                    et_id.setText("");
+                    et_pw.setText("");
+                    et_id.clearFocus();
+                    et_pw.clearFocus();
                     startActivity(intent);
                 } else{
                     Toast.makeText(getApplicationContext(), "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show();

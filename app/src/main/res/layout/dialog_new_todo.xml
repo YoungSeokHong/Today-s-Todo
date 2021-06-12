@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/round_rec_menu"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:layout_gravity="center"
     android:layout_marginHorizontal="10dp"
-    android:layout_gravity="center">
+    android:background="@drawable/round_rec_menu"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
 
     <TextView
@@ -31,45 +31,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:hint="@string/et_content"
-        android:inputType="text"
-        android:textColor="@color/black"
         android:backgroundTint="#BABABA"
+        android:hint="@string/et_content"
+        android:fontFamily="@font/bmjua"
+        android:inputType="text"
+        android:textColorHint="#9D8D73"
+        android:textColor="@color/black"
         android:textSize="30dp" />
 
     <CalendarView
         android:id="@+id/cv_day"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_weight="1"
             android:background="@drawable/round_rec_small_gray"
+            android:fontFamily="@font/bmjua"
             android:text="@string/btn_cancel"
             android:textColor="@color/white"
-            android:textSize="25dp"/>
-    <Button
-        android:id="@+id/btn_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_weight="1"
-        android:background="@drawable/round_rec_small"
-        android:text="@string/btn_ok"
-        android:textColor="@color/white"
-        android:textSize="25dp"/>
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_rec_small"
+            android:fontFamily="@font/bmjua"
+            android:text="@string/btn_ok"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
 
     </LinearLayout>
 

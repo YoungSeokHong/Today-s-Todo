@@ -32,11 +32,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:singleLine="true"
-            android:text="아이디"
+            android:text="@string/tv_id"
             android:textColor="#BABABA"
             android:textSize="15dp" />
 
@@ -51,11 +52,12 @@
             android:backgroundTint="#BABABA"/>
 
         <TextView
+            android:id="@+id/tv_pw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:singleLine="true"
-            android:text="비밀번호"
+            android:text="@string/tv_pw"
             android:textColor="#BABABA"
             android:textSize="15dp" />
 
@@ -101,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:text="아이디 찾기"
+            android:text="@string/tv_findId"
             android:textColor="#BABABA" />
 
         <TextView
@@ -115,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:text="비밀번호 찾기"
+            android:text="@string/tv_findPassword"
             android:textColor="#BABABA" />
 
         <TextView
@@ -125,11 +127,11 @@
             android:textColor="#BABABA" />
 
         <TextView
-            android:id="@+id/tv_sinUp"
+            android:id="@+id/tv_signUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:text="회원가입"
+            android:text="@string/tv_signUp"
             android:textColor="#BABABA" />
     </LinearLayout>
 
