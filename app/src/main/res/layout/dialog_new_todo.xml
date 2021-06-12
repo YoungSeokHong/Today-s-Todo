@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_rec_menu"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginHorizontal="10dp"
+    android:layout_gravity="center">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="새로운 할 일"
+        android:textColor="#FA9F0B"
+        android:textSize="50dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_marginHorizontal="10dp"
+        android:background="#FA9F0B" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="@string/et_content"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:backgroundTint="#BABABA"
+        android:textSize="30dp" />
+
+    <CalendarView
+        android:id="@+id/cv_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_rec_small_gray"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/white"
+            android:textSize="25dp"/>
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_rec_small"
+        android:text="@string/btn_ok"
+        android:textColor="@color/white"
+        android:textSize="25dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

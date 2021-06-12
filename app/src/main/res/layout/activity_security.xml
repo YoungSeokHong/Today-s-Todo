@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEE4BA"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SecurityActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/img_lock" />
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="412dp"
+        android:columnCount="2"
+        android:paddingHorizontal="20dp"
+        android:rowCount="2">
+
+        <Button
+            android:id="@+id/btn_one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/round_rec"
+            android:fontFamily="@font/bmjua"
+            android:text="@string/btn_one"
+            android:textColor="#CC3300" />
+
+        <Button
+            android:id="@+id/btn_two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/round_rec"
+            android:fontFamily="@font/bmjua"
+            android:text="@string/btn_two"
+            android:textColor="#CC3300" />
+
+        <Button
+            android:id="@+id/btn_three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/round_rec"
+            android:fontFamily="@font/bmjua"
+            android:text="@string/btn_three"
+            android:textColor="#CC3300" />
+
+        <Button
+            android:id="@+id/btn_four"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="10dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/round_rec"
+            android:fontFamily="@font/bmjua"
+            android:text="@string/btn_four"
+            android:textColor="#CC3300" />
+    </GridLayout>
+
+    <ImageView
+        android:id="@+id/iv_back_login"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="right"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/img_lock2" />
+
+</LinearLayout>
