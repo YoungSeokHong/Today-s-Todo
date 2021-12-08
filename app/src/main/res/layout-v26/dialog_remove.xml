@@ -10,42 +10,24 @@
 
 
     <TextView
+        android:id="@+id/tv_content_remove"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="새로운 할 일"
+        android:text="삭제할 할 일"
         android:textColor="#FA9F0B"
-        android:textSize="50dp" />
+        android:textSize="40sp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10px"
-        android:layout_marginHorizontal="10dp"
-        android:background="#FA9F0B" />
-
-    <EditText
-        android:id="@+id/et_content"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:backgroundTint="#BABABA"
-        android:hint="@string/et_content"
-        android:fontFamily="@font/bmjua"
-        android:inputType="text"
-        android:textColorHint="#9D8D73"
-        android:textColor="@color/black"
-        android:textSize="30dp" />
-
-    <CalendarView
-        android:id="@+id/cv_day"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/CalenderViewCustom"
-        android:dateTextAppearance="@style/CalenderViewDateCustomText"
-        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText" />
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_remove"
+        android:textSize="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,7 +49,7 @@
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/btn_ok"
+            android:id="@+id/btn_yes"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
@@ -75,7 +57,7 @@
             android:layout_weight="1"
             android:background="@drawable/round_rec_small"
             android:fontFamily="@font/bmjua"
-            android:text="@string/btn_ok"
+            android:text="@string/btn_yes"
             android:textColor="@color/white"
             android:textSize="25dp" />
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navi"
     android:layout_width="300dp"
     android:layout_height="match_parent"
@@ -24,21 +25,23 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/bmjua"
-                android:text="사용자"
+                android:text="@string/tv_userName"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/tv_userId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="user_id@todo.com"
+                android:text="@string/tv_userId"
                 android:textColor="#7D736C"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
 
@@ -57,7 +60,7 @@
         android:layout_marginHorizontal="10dp"
         android:text="기타일정"
         android:textColor="#3B3838"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -72,9 +75,9 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:fontFamily="@font/bmjua"
-            android:text="Done(완료한 일 보기)"
+            android:text="@string/tv_showDone"
             android:textColor="#B82C00"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tv_showFriend"
@@ -82,9 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:fontFamily="@font/bmjua"
-            android:text="친구의 생일 보기"
+            android:text="@string/tv_showFriend"
             android:textColor="#B82C00"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <ImageView
@@ -100,7 +103,7 @@
         android:layout_marginHorizontal="10dp"
         android:text="계정"
         android:textColor="#3B3838"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -121,9 +124,9 @@
                 android:layout_marginVertical="10dp"
                 android:layout_weight="0"
                 android:fontFamily="@font/bmjua"
-                android:text="보안설정"
+                android:text="@string/tv_security"
                 android:textColor="#B82C00"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <View
                 android:layout_width="wrap_content"
@@ -135,7 +138,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:track="@drawable/switch_track" />
+                android:track="@drawable/switch_track"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
         </LinearLayout>
 
         <LinearLayout
@@ -150,9 +154,9 @@
                 android:layout_marginVertical="10dp"
                 android:layout_weight="0"
                 android:fontFamily="@font/bmjua"
-                android:text="동기화 설정"
+                android:text="@string/tv_sync"
                 android:textColor="#B82C00"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <View
                 android:layout_width="wrap_content"
@@ -164,7 +168,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:track="@drawable/switch_track" />
+                android:track="@drawable/switch_track"
+                android:focusable="false"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
         </LinearLayout>
 
         <TextView
@@ -174,9 +180,9 @@
             android:layout_marginVertical="10dp"
             android:layout_weight="0"
             android:fontFamily="@font/bmjua"
-            android:text="로그아웃"
+            android:text="@string/tv_logout"
             android:textColor="#B82C00"
-            android:textSize="30dp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
 

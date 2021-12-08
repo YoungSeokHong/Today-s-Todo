@@ -1,43 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEE4BA"
+    android:background="#FBE5D6"
     tools:context=".MainActivity"
-    android:id="@+id/main_layout">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    android:id="@+id/main_layout"
+    android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/iv_navi"
+                android:id="@+id/iv_back_main"
                 android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginVertical="5dp"
                 android:layout_weight="0"
-                android:src="@drawable/img_navi" />
+                android:src="@drawable/img_back" />
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
-            <ImageView
-                android:id="@+id/iv_calendar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:layout_weight="0"
-                android:src="@drawable/img_calendar" />
 
         </LinearLayout>
 
@@ -51,36 +40,38 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_title_todo"
+                    android:id="@+id/tv_title_done"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#E78D00"
-                    android:text="@string/tv_title_todo"
+                    android:text="@string/tv_title_done"
                     android:textStyle="bold"
                     android:layout_marginHorizontal="16dp"
                     android:textSize="16sp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_todo"
+                    android:id="@+id/rv_done"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+                <TextView
+                    android:id="@+id/tv_title_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#E73916"
+                    android:text="@string/tv_title_none"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="16dp"
+                    android:textSize="16sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_none"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
-                <Button
-                    android:id="@+id/btn_add"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginVertical="6dp"
-                    android:autoSizeTextType="uniform"
-                    android:background="@drawable/round_rec_dotted"
-                    android:text="+"
-                    android:textColor="#FFFA9F0B"
-                    android:textStyle="bold" />
             </LinearLayout>
         </ScrollView>
-    </LinearLayout>
-
-    <include layout="@layout/drawer_navi" />
-</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

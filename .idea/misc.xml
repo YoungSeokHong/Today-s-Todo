@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/drawable-v24/round_rec_menu.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/drawable/line_dotted.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/drawable/round_rec.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/drawable/round_rec_dotted.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/drawable/round_rec_half.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/drawable/round_rec_small.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout-v26/activity_done.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout-v26/item_list_none.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout-v26/item_list_todo.xml" value="0.3536458333333333" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout-v26/popup_security.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout/activity_calendar.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout/activity_login.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout/activity_main.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout/activity_security.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout/dialog_new_todo.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/YoungHong/TodaysTodo/app/src/main/res/layout/drawer_navi.xml" value="0.22735507246376813" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

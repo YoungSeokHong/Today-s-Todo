@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/option_new"
+        android:title="새 일정" />
+    <item
+        android:id="@+id/option_renew"
+        android:title="새로고침"/>
+    <item
+        android:id="@+id/option_remove"
+        android:title="선택된 일정 삭제"/>
+</menu>

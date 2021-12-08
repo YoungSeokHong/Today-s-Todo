@@ -1,5 +1,6 @@
 package com.example.todaysto_do;
 
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,33 +9,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHolder> {
+public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.CustomViewHolder> {
 
     private ArrayList<MainData> arrayList;
 
-    public MainAdapter(ArrayList<MainData> arrayList) {
+    public TodoAdapter(ArrayList<MainData> arrayList) {
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public MainAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TodoAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_todo, parent, false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
-        holder.iv_profile.setImageResource(arrayList.get(position).getIv_profile());
-        holder.tv_day.setText(arrayList.get(position).getTv_day());
-        holder.tv_content.setText(arrayList.get(position).getTv_content());
+    public void onBindViewHolder(@NonNull TodoAdapter.CustomViewHolder holder, int position) {
+        holder.iv_profile.setImageResource(arrayList.get(position).getIcon());
+        holder.tv_day.setText(arrayList.get(position).getDay());
+        holder.tv_content.setText(arrayList.get(position).getContent());
 
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -81,4 +83,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
             this.tv_content = (TextView) itemView.findViewById(R.id.tv_content);
         }
     }
+
+
+
 }

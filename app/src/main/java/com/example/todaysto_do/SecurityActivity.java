@@ -1,5 +1,6 @@
 package com.example.todaysto_do;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,19 +11,56 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 public class SecurityActivity extends AppCompatActivity {
+    private static boolean onSecur;
     private int[] numBtnIDs = {R.id.btn_one, R.id.btn_two, R.id.btn_three, R.id.btn_four};
-    private String num;
+    private String num, pw;
 
     private ImageView iv_back_login, iv_del;
     private Button[] numBtns = new Button[numBtnIDs.length];
     private EditText et_pw_simple;
 
     private OnclickListener onclickListener;
+    private CacheSecur cacheSecur;
+    private CachePW cachePW;
+    private CacheLogin cacheLogin;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_security);
+
+        cacheSecur = new CacheSecur(this);
+        cacheLogin = new CacheLogin(this);
+        cachePW = new CachePW(this);
+
+        try {
+            pw = cachePW.Read();
+            System.out.println(pw);
+            System.out.println("------------------");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(pw.length() != 4) {
+            Intent intent = new Intent(SecurityActivity.this, MainActivity.class);
+            finish();
+            startActivity(intent);
+        }
+
+        try {
+                onSecur = Boolean.parseBoolean(cacheSecur.Read());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (!onSecur){
+            Intent intent = new Intent(SecurityActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         onclickListener = new OnclickListener();
 
         this.iv_back_login = (ImageView)findViewById(R.id.iv_back_login);
@@ -40,7 +78,15 @@ public class SecurityActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.iv_back_login:
+                    try {
+                        cacheLogin.Write("false");
+                        cacheSecur.Write("false");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Intent intent = new Intent(SecurityActivity.this, LoginActivity.class);
                     finish();
+                    startActivity(intent);
                     break;
                 case R.id.iv_del:
                     if(num == null || num.equals("")) break;
@@ -68,9 +114,10 @@ public class SecurityActivity extends AppCompatActivity {
 
     private String checkNum(String num, int id){
         if(num.length() >= 4){
-            if(num.equals("1234")){
+            if(num.equals(pw)){
                 Toast.makeText(getApplicationContext(), "접속에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SecurityActivity.this, MainActivity.class);
+                finish();
                 startActivity(intent);
             }else{
                 Toast.makeText(getApplicationContext(), "비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show();
